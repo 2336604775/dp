@@ -13,6 +13,7 @@ else
   rm -rf $PREFIX/bin/dp
   mv dp $PREFIX/bin
   echo "更新完成"
+  cd ~
   rm -rf $PREFIX/home/dp
 fi
 echo -e "欢迎加入QQ群讨论:902795006"
