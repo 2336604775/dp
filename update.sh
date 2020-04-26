@@ -2,7 +2,7 @@
 #HACKER
 #QQ2336604775
 #github:2336604775
-var=1.0.1
+var=1.0.2
 echo "当前最新版本为:$var"
 if [ "$ver" == "$var" ]; then
   echo -e "当前为最新版本"
