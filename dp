@@ -1,0 +1,101 @@
+#!/bin/bash
+#HACKER
+#Email:2336604775@qq.com
+#github:2336604775
+#欢迎反馈bug
+export ver="1.0.1"
+if [ x"$1" == x ];then
+echo "欢迎使用dp辅助解压缩工具"
+echo "现支持.tar gz tar.gz bz2 tar.bz2 bz(仅解压) zip"
+echo "*tar系为打包"
+echo "用法:dp 模式 文件/目录 压缩文件名 压缩方式"
+echo "模式:"
+echo "u      #检查更新&&更新"
+echo "d      #解压文件"
+echo "c      #压缩文件"
+echo "i      #安装必要工具(第一次安装请先执行这个)"
+echo "*请先cd到文件所处目录下"
+echo "*gz压缩可不用指定压缩文件名"
+elif [ $1 == c ];then
+echo "您已选择压缩模式"
+  if [ x"$2" == x ];then
+  echo "请指定目录"
+  elif [ $4 == tar ];then
+  tar cvf $3 $2
+  elif [ $4 == gz ];then
+  gzip $3
+  elif [ $4 == tar.gz ];then
+  tar zcvf $3 $2
+  elif [ $4 == bz2 ];then
+  bzip2 -z $3
+  elif [ $4 == .tar.bz2 ];then
+  tar jcvf $3 $2
+  elif [ $4 == zip ];then
+  zip $3 $2
+  else
+  echo "暂不支持这种格式"
+  fi
+elif [ $1 == d ];then
+echo "您已选择解压模式"
+file_name=$2
+hz=${file_name#*.}
+echo "后缀名为:"
+echo $hz
+if [ x"$2" == x ];then
+echo "请指定一个文件"
+elif [ $hz == tar ];then
+tar xvf $2
+elif [ $hz == gz ];then
+gzip -d $2
+elif [ $hz == tar.gz ];then
+tar zxvf $2
+elif [ $hz == bz2 ];then
+bzip2 -d $2
+elif [ $hz == tar.bz2 ];then
+tar jxvf $2
+elif [ $hz == bz ];then
+bzip2 -d $2
+elif [ $hz == zip ];then
+unzip $2
+else
+echo "自动检测失败，请在文件名后输入文件后缀以手动解压"
+if [ x"$3" == x ];then
+echo "正在使用自动检测"
+elif [ $3 == tar ];then
+echo "正在手动解压"
+tar xvf $2
+elif [ $3 == gz ];then
+echo "正在手动解压"
+gzip -d $2
+elif [ $3 == tar.gz ];then
+echo "正在手动解压"
+tar zxvf $2
+elif [ $3 == bz2 ];then
+echo "正在手动解压"
+bzip2 -d $2
+elif [ $3 == tar.bz2 ];then
+echo "正在手动解压"
+tar jxvf $2
+elif [ $3 == bz ];then
+echo "正在手动解压"
+bzip2 -d $2
+elif [ $3 == zip ];then
+echo "正在手动解压"
+unzip $2
+else
+echo "后缀名输入错误或暂不支持这种压缩文件"
+fi
+fi
+elif [ $1 == i ];then
+echo "正在安装工具"
+apt install gzip zip bzip2 tar -y
+elif [ $1 == u ];then
+apt install git -y
+git clone https://github.com/2336604775/dp.git
+cd dp
+chmod 775 up.sh
+./up.sh
+else
+echo "没有这个模式"
+fi
+
