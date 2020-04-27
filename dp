@@ -6,6 +6,7 @@
 export ver="1.0.5"
 if [ x"$1" == x ];then
 echo "欢迎使用dp辅助解压缩工具"
+echo "版本$ver"
 echo "现支持.tar gz tar.gz bz2 tar.bz2 bz(仅解压) zip"
 echo ".tar.xz"
 echo "*tar系为打包"
