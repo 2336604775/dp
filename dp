@@ -3,10 +3,11 @@
 #Email:2336604775@qq.com
 #github:2336604775
 #欢迎反馈bug
-export ver="1.0.3"
+export ver="1.0.5"
 if [ x"$1" == x ];then
 echo "欢迎使用dp辅助解压缩工具"
 echo "现支持.tar gz tar.gz bz2 tar.bz2 bz(仅解压) zip"
+echo ".tar.xz"
 echo "*tar系为打包"
 echo "用法:dp 模式 文件/目录 压缩文件名 压缩方式"
 echo "模式:"
@@ -29,8 +30,10 @@ echo "您已选择压缩模式"
   tar zcvf $3 $2
   elif [ $4 == bz2 ];then
   bzip2 -z $3
-  elif [ $4 == .tar.bz2 ];then
+  elif [ $4 == tar.bz2 ];then
   tar jcvf $3 $2
+  elif [ $4 == tar.xz ];then
+  tar -Jcf $3 $2
   elif [ $4 == zip ];then
   zip $3 $2
   else
@@ -58,6 +61,8 @@ elif [ $hz == bz ];then
 bzip2 -d $2
 elif [ $hz == zip ];then
 unzip $2
+elif [ $hz == tar.xz ];then
+tar -Jxf $2
 else
 echo "自动检测失败，请在文件名后输入文件后缀以手动解压"
 if [ x"$3" == x ];then
@@ -83,13 +88,16 @@ bzip2 -d $2
 elif [ $3 == zip ];then
 echo "正在手动解压"
 unzip $2
+elif [ $3 == tar.xz ];then
+tar -Jxf $2
+echo "正在手动解压"
 else
 echo "后缀名输入错误或暂不支持这种压缩文件"
 fi
 fi
 elif [ $1 == i ];then
 echo "正在安装工具"
-apt install gzip zip bzip2 tar -y
+apt install gzip zip xz-utils bzip2 tar -y
 elif [ $1 == u ];then
 apt install git -y
 git clone https://github.com/2336604775/dp.git

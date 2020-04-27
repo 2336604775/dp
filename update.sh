@@ -2,10 +2,11 @@
 #HACKER
 #QQ2336604775
 #github:2336604775
-var=1.0.3
+var=1.0.5
 echo "当前最新版本为:$var"
 if [ "$ver" == "$var" ]; then
   echo -e "当前为最新版本"
+  rm -rf $PREFIX/home/dp
 else
   echo -e "正在更新"
   git clone https://github.com/2336604775/dp.git
