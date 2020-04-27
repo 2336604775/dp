@@ -2,7 +2,7 @@
 #HACKER
 #QQ2336604775
 #github:2336604775
-var=1.0.2
+var=1.0.3
 echo "当前最新版本为:$var"
 if [ "$ver" == "$var" ]; then
   echo -e "当前为最新版本"
@@ -14,6 +14,6 @@ else
   mv dp $PREFIX/bin
   echo "更新完成"
   cd ~
-  rm -rf $PREFIX/home/dp
+  rm -rf dp
 fi
 echo -e "欢迎加入QQ群讨论:902795006"
