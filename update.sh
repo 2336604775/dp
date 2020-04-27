@@ -13,6 +13,7 @@ else
   cd dp
   rm -rf $PREFIX/bin/dp
   mv dp $PREFIX/bin
+  clear
   echo "更新完成"
   cd ~
   rm -rf dp
