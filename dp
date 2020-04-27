@@ -24,18 +24,25 @@ echo "您已选择压缩模式"
   echo "请指定目录"
   elif [ $4 == tar ];then
   tar cvf $3 $2
+  echo "压缩成功"
   elif [ $4 == gz ];then
   gzip $3
+  echo "压缩成功"
   elif [ $4 == tar.gz ];then
   tar zcvf $3 $2
+  echo "压缩成功"
   elif [ $4 == bz2 ];then
   bzip2 -z $3
+  echo "压缩成功"
   elif [ $4 == tar.bz2 ];then
   tar jcvf $3 $2
+  echo "压缩成功"
   elif [ $4 == tar.xz ];then
   tar -Jcf $3 $2
+  echo "压缩成功"
   elif [ $4 == zip ];then
   zip $3 $2
+  echo "压缩成功"
   else
   echo "暂不支持这种格式"
   fi
