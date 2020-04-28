@@ -9,6 +9,8 @@ if [ "$ver" == "$var" ]; then
   rm -rf ~/dp
 else
   echo -e "正在更新"
+  cd ~
+  rm -rf dp 1>/dev/null 2>&1
   git clone https://github.com/2336604775/dp.git
   cd dp
   rm -rf $PREFIX/bin/dp
