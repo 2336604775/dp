@@ -45,7 +45,7 @@ echo "您已选择压缩模式"
   zip $3 $2
   echo "压缩成功"
   else
-  echo "暂不支持这种格式"
+  echo "暂不支持这种格式或命令输入错误"
   fi
 elif [ $1 == d ];then
 echo "您已选择解压模式"
