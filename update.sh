@@ -13,11 +13,10 @@ else
   rm -rf dp 1>/dev/null 2>&1
   git clone https://github.com/2336604775/dp.git
   cd dp
-  rm -rf $PREFIX/bin/dp
-  mv dp $PREFIX/bin
-  clear
+  rm -rf $PREFIX/bin/dp 1>/dev/null 2>&1
+  mv dp $PREFIX/bin 1>/dev/null 2>&1
   echo "更新完成"
   cd ~
-  rm -rf dp
+  rm -rf dp 1>/dev/null 2>&1
 fi
 echo -e "欢迎加入QQ群讨论:902795006"
