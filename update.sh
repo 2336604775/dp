@@ -3,6 +3,7 @@
 #QQ2336604775
 #github:2336604775
 var=1.0.7
+apt get install git -y 1>/dev/null 2>&1
 echo "当前最新版本为:$var"
 if [ "$ver" == "$var" ]; then
   echo -e "当前为最新版本"

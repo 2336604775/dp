@@ -107,8 +107,8 @@ elif [ $1 == i ];then
 echo "正在安装工具"
 apt install gzip zip xz-utils bzip2 tar -y
 elif [ $1 == u ];then
-apt install git -y
-git clone https://github.com/2336604775/dp.git
+apt install git -y 1>/dev/null 2>&1
+git clone https://github.com/2336604775/dp.git 1>/dev/null 2>&1
 cd dp
 chmod 775 update.sh
 ./update.sh
