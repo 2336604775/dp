@@ -2,7 +2,7 @@
 #HACKER
 #QQ2336604775
 #github:2336604775
-var=1.0.7
+var=1.0.8
 apt get install git -y 1>/dev/null 2>&1
 echo "当前最新版本为:$var"
 if [ "$ver" == "$var" ]; then
