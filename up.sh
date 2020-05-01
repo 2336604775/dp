@@ -4,3 +4,4 @@ cp dp $PREFIX/bin
 echo "安装完成"
 cd ~
 rm -rf dp
+cd ~
