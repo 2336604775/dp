@@ -1,4 +1,10 @@
 #!/bin/bash
 git add *
-git commit -m "HACKERROR"
+git commit -m "更新(又要鸽了)"
 git push -u origin master
+rm ~/2336604775.github.io/bowh/dp
+rm ~/2336604775.github.io/bowh/update.sh
+cp dp ~/2336604775.github.io/bowh/
+cp update.sh ~/2336604775.github.io/bowh/
+cd ~/2336604775.github.io
+./push
