@@ -9,11 +9,9 @@ echo "看不见我" 1>/dev/null 2>&1
   else
   echo "安装工具中…"
   apt install gzip zip xz-utils bzip2 tar -y
-#  wget http://hackerror.top/bowh/dpcache -o $PREFIX/var/dpcache 1>/dev/null 2>&1
+  touch $PREFIX/var/dpcache
 fi
-rm $PREFIX/var/dpcache
-wget -b http://hackerror.top/bowh/dpcache -o $PREFIX/var/dpcache 1>/dev/null 2>&1
-export var=`cat $PREFIX/var/dpcache`
+export var=`curl -fsSL http://hackerror.top/bowh/dpcache`
 if [ x"$1" == x ];then
 echo "欢迎使用dp解压缩整合工具"
 echo "版本$ver"
