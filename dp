@@ -5,6 +5,7 @@
 #####################
 export ver="1.1.0"
 if [ -f "$PREFIX/var/dpcache" ];then
+echo "看不见我" 1>/dev/null 2>&1
   else
   echo "安装工具中…"
   apt install gzip zip xz-utils bzip2 tar -y
