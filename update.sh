@@ -13,7 +13,8 @@ else
   echo -e "正在更新"
   cd ~
   rm $PREFIX/bin/dp 1>/dev/null 2>&1
-  wget http://hackerror.top/bowh/dp -o $PREFIX/bin/dp
+  wget http://hackerror.top/bowh/dp
+  mv dp $PREFIX/bin
   chmod +x $PREFIX/bin/dp
   echo "更新完成"
 fi
