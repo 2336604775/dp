@@ -1,4 +1,4 @@
-#!/bin/bash        ##
+#!/bin/bash
 #HACKERROR         ##
 #QQ2336604775      ##
 #github:2336604775 ##
@@ -12,9 +12,9 @@ if [ "$ver" == "$var" ]; then
 else
   echo -e "正在更新"
   cd ~
-  wget http://hackerror.top/bowh/dp
-  rm -rf $PREFIX/bin/dp 1>/dev/null 2>&1
-  mv dp $PREFIX/bin 1>/dev/null 2>&1
+  rm $PREFIX/bin/dp 1>/dev/null 2>&1
+  wget http://hackerror.top/bowh/dp -o $PREFIX/bin
+  chmod +x $PREFIX/bin/dp
   echo "更新完成"
 fi
 echo -e "欢迎加入QQ群讨论:902795006"

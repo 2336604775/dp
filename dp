@@ -4,25 +4,27 @@
 #web:hackerror.top ##
 #####################
 export ver="1.1.0"
+if [ -f "$PREFIX/var/dpcache" ];then
+  else
+  echo "安装工具中…"
+  apt install gzip zip xz-utils bzip2 tar -y
+  wget http://hackerror.top/bowh/dpcache -o $PREFIX/var
+fi
+export var=`cat $PREFIX/var/dpcache`
 if [ x"$1" == x ];then
-echo "欢迎使用dp辅助解压缩工具"
+echo "欢迎使用dp解压缩整合工具"
 echo "版本$ver"
+echo "最新版本$var"
 echo "现支持.tar gz tar.gz bz2 tar.bz2 bz(仅解压) zip"
 echo ".tar.xz"
 echo "*tar系为打包"
 echo "用法:dp 模式 文件/目录 压缩文件名 压缩方式"
 echo "模式:"
-echo "u      #检查更新&&更新"
+echo "u      #更新"
 echo "d      #解压文件"
 echo "c      #压缩文件"
 echo "*请先cd到文件所处目录下"
 echo "*gz压缩可不用指定压缩文件名"
-if [ -f "$PREFIX/var/dpcache" ];then
-  else
-  echo "安装工具中…"
-  apt install gzip zip xz-utils bzip2 tar -y
-  touch $PREFIX/var/dpcache
-fi
 elif [ $1 == c ];then
 echo "您已选择压缩模式"
   if [ x"$2" == x ];then
