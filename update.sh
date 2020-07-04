@@ -18,3 +18,5 @@ else
   echo "更新完成"
 fi
 echo -e "欢迎加入QQ群讨论:902795006"
+rm update.sh
+dp
