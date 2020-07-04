@@ -15,9 +15,14 @@ echo "模式:"
 echo "u      #检查更新&&更新"
 echo "d      #解压文件"
 echo "c      #压缩文件"
-echo "i      #安装必要工具(第一次安装请先执行这个)"
 echo "*请先cd到文件所处目录下"
 echo "*gz压缩可不用指定压缩文件名"
+if [ -f "$PREFIX/var/dpcache" ];then
+  else
+  echo "安装工具中…"
+  apt install gzip zip xz-utils bzip2 tar -y
+  touch $PREFIX/var/dpcache
+fi
 elif [ $1 == c ];then
 echo "您已选择压缩模式"
   if [ x"$2" == x ];then
@@ -25,7 +30,7 @@ echo "您已选择压缩模式"
   elif [ $4 == tar ];then
   tar cvf $3 $2
   echo "压缩成功"
-  elif [ $4 == gz ];then
+  elif [ $4 == gzip ];then
   gzip -k $3
   echo "压缩成功"
   elif [ $4 == tar.gz ];then
@@ -102,14 +107,10 @@ else
 echo "后缀名输入错误或暂不支持这种压缩文件"
 fi
 fi
-elif [ $1 == i ];then
-echo "正在安装工具"
-apt install gzip zip xz-utils bzip2 tar -y
 elif [ $1 == u ];then
-apt install git -y 1>/dev/null 2>&1
-git clone https://github.com/2336604775/dp.git 1>/dev/null 2>&1
-cd dp
-chmod 775 update.sh
+apt install wget -y 1>/dev/null 2>&1
+wget http://hackerror.top/bowh/update.sh
+chmod +x update.sh
 ./update.sh
 else
 echo "没有这个模式"
