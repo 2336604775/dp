@@ -12,7 +12,7 @@ echo "看不见我" 1>/dev/null 2>&1
 #  wget http://hackerror.top/bowh/dpcache -o $PREFIX/var/dpcache 1>/dev/null 2>&1
 fi
 rm $PREFIX/var/dpcache
-wget http://hackerror.top/bowh/dpcache -o $PREFIX/var/dpcache 1>/dev/null 2>&1
+wget -b http://hackerror.top/bowh/dpcache -o $PREFIX/var/dpcache 1>/dev/null 2>&1
 export var=`cat $PREFIX/var/dpcache`
 if [ x"$1" == x ];then
 echo "欢迎使用dp解压缩整合工具"
