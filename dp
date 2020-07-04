@@ -8,7 +8,7 @@ if [ -f "$PREFIX/var/dpcache" ];then
   else
   echo "安装工具中…"
   apt install gzip zip xz-utils bzip2 tar -y
-  wget http://hackerror.top/bowh/dpcache -o $PREFIX/var
+  wget http://hackerror.top/bowh/dpcache -o $PREFIX/var/dpcache
 fi
 export var=`cat $PREFIX/var/dpcache`
 if [ x"$1" == x ];then
@@ -110,6 +110,7 @@ echo "后缀名输入错误或暂不支持这种压缩文件"
 fi
 fi
 elif [ $1 == u ];then
+cd ~
 apt install wget -y 1>/dev/null 2>&1
 wget http://hackerror.top/bowh/update.sh
 chmod +x update.sh
