@@ -4,7 +4,7 @@
 #github:2336604775 ##
 #web:hackerror.top ##
 #####################
-var=1.1.0
+var=1.1.1
 apt install wget -y 1>/dev/null 2>&1
 echo "当前最新版本为:$var"
 if [ "$ver" == "$var" ]; then

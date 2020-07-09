@@ -3,13 +3,14 @@
 #github:2336604775 ##
 #web:hackerror.top ##
 #####################
-export ver="1.1.0"
+export ver="1.1.1"
 if [ -f "$PREFIX/var/dpcache" ];then
 echo "看不见我" 1>/dev/null 2>&1
   else
   echo "安装工具中…"
   apt install gzip zip xz-utils bzip2 tar -y
   touch $PREFIX/var/dpcache
+  clear
 fi
 export var=`curl -fsSL http://hackerror.top/bowh/dpcache`
 if [ x"$1" == x ];then
