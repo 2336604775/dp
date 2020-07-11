@@ -12,5 +12,5 @@ apt install curl -y 1>/dev/null 2>&1
   chmod +x dp
   echo "完成"
 echo -e "欢迎加入QQ群:902795006"
-rm update.sh
+rm ~/update.sh
 dp
