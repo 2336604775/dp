@@ -3,7 +3,7 @@
 #github:2336604775 ##
 #web:hackerror.top ##
 #####################
-export ver="1.1.1"
+export ver="1.1.2"
 if [ -f "$PREFIX/var/dpcache" ];then
 echo "看不见我" 1>/dev/null 2>&1
   else
@@ -14,7 +14,6 @@ echo "看不见我" 1>/dev/null 2>&1
 fi
 export var=`curl -fsSL http://hackerror.top/bowh/dpcache`
 if [ x"$1" == x ];then
-echo "欢迎使用dp解压缩整合工具"
 echo "版本$ver"
 echo "最新版本$var"
 echo "现支持.tar gz tar.gz bz2 tar.bz2 bz(仅解压) zip"
@@ -25,7 +24,6 @@ echo "模式:"
 echo "u      #更新"
 echo "d      #解压文件"
 echo "c      #压缩文件"
-echo "*请先cd到文件所处目录下"
 echo "*gz压缩可不用指定压缩文件名"
 elif [ $1 == c ];then
 echo "您已选择压缩模式"
@@ -113,8 +111,8 @@ fi
 fi
 elif [ $1 == u ];then
 cd ~
-apt install wget -y 1>/dev/null 2>&1
-wget http://hackerror.top/bowh/update.sh
+apt install curl -y 1>/dev/null 2>&1
+curl -o update.sh http://hackerror.top/bowh/update.sh
 chmod +x update.sh
 ./update.sh
 else
